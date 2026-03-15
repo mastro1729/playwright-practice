@@ -1,0 +1,6 @@
+TestCase | Status | ExecutedBy | ExecutedDate
+1 | Fail | Peter | 01-01-23
+2 | Pass | John | 01-02-23
+3 | Fail | Peter | 01-03-23
+4 | Pass | John | 01-04-23
+5 | Fail | Peter | 01-05-23

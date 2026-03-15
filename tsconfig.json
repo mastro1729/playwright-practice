@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+
+    // Environment Settings
+    "module": "nodenext",
+    "target": "esnext",
+    "moduleResolution": "nodenext",
+    
+    // Playwright + Node types
+    // Purpose: Make TypeScript understand Playwright + Node global functions.
+    "types": ["@playwright/test", "node"],
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": false,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "strictNullChecks": false
+  },
+  
+  // Purpose: Tell TypeScript which files to type-check and compile.
+  "include": ["tests/**/*.ts", "playwright.config.ts"]
+}
