@@ -1,16 +1,15 @@
 import { ElementHandle, expect, test } from '@playwright/test';
 
 test('Extract all disabled dates from calendar', async ({ page }) => {
-    await page.goto('https:/    /www.redbus.in/');
-    await page.locator('//div[contains(@aria-label,"Select Date")]').click();
-    await page.locator('//div[@aria-label="Date picker"]').waitFor();
+    await page.goto('https://www.redbus.in');
+    await page.locator('[aria-label*="Select Date"]').click();
+    await page.locator('div[class*="datepicker"]').waitFor();
 
     /* const disabledDates = await page.locator(`//div[@role='button' and @aria-disabled='true']`)
               .evaluateAll(elements => 
                 elements.map(e1 => e1.getAttribute('aria-label'))); */
 
-    const dateLocator = page.locator('//ul//div[@role="button" and @aria-label]');
-    const dateElements: ElementHandle<Node>[] = await dateLocator.elementHandles();
+    const dates = page.locator('//ul//div[@role="button"]');
     // console.log(dateElements);
     // expect(disabledDates.length).toBeGreaterThan(0);
 
@@ -20,9 +19,12 @@ test('Extract all disabled dates from calendar', async ({ page }) => {
      } */
 
     const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    today.setHours(0, 0, 0, 0); 
   
-    for (const ele of dateElements) {
+
+    const count = await dates.count();
+    for (let i=0; i<count; i++) {
+        const ele = dates.nth(i);
         const rawText =
             await ele.getAttribute('aria-label');
         const dateText = rawText?.split(',').slice(0,3).join(',');
