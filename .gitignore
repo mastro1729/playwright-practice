@@ -1,13 +1,71 @@
-# Playwright
+# node_modules
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
+package-lock.json
 
-# Reports
+# Build outputs
+dist/
+*.js
+*.js.map
+!scripts/*.js
+!config/*.js
+!product/*.js
+
+# Test results and reports
 allure-results/
-
-# Downloads
+test-results/
+mochawesome-report/
+playwright-report/
+*.html
+!docs/**/*.html
 downloads/
+
+# Screenshots
+screenshots/
+*.png
+*.jpg
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Credentials (DO NOT COMMIT!)
+.npmrc
+credentials.json
+secrets.json
+
+# Generated page objects (Can be regenerated)
+src/target/generated-sources/
+
+# Auto-generated config files (Regenerated from framework)
+playwright.config.ts
+.sauce/
+
+# Test data (if contains sensitive information)
+# test-data/**/*.xlsx
+# test-data/**/*.csv

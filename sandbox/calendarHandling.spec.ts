@@ -4,7 +4,7 @@ test('Calendar Handling I', async ({ page }) => {
 
   await page.goto('https://seleniumpractise.blogspot.com/2016/08/how-to-handle-calendar-in-selenium.html');
   await page.locator(`input#datepicker`).click();
-
+  
   const expectedMonthYear = 'January 2030';
   const expectedDay = '1';
   const expectedMonth = '01';
@@ -17,6 +17,8 @@ test('Calendar Handling I', async ({ page }) => {
       throw new Error('Calendar title not found');
     }
     const currentMonthYear = rawText.replace(/\s+/g, ' ');
+    //const currentMonthYear = rawText;
+    console.log(currentMonthYear);
     if (currentMonthYear === expectedMonthYear) {
       await page.getByText(expectedDay, { exact: true }).click();
       await page.waitForTimeout(800);

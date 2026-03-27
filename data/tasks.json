@@ -1,0 +1,9 @@
+{
+    "a2fa4580": {
+        "taskId": "a2fa4580",
+        "title": "Fix CSS",
+        "description": "Homepage footer uses an inline style",
+        "status": "TO-DO",
+        "assignedUserIds": ["a9f39c40"]
+    }
+}

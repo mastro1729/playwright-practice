@@ -1,38 +1,54 @@
 {
+  "ts-node": {
+    "transpileOnly": true,
+    "esm": false,
+    "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node"
+    }
+  },
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
-
-    // Environment Settings
-    "module": "nodenext",
-    "target": "esnext",
-    "moduleResolution": "nodenext",
-    
-    // Playwright + Node types
-    // Purpose: Make TypeScript understand Playwright + Node global functions.
-    "types": ["@playwright/test", "node"],
-
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": false,
-
-    // Recommended Options
+    "target": "ES2021",
+    "module": "COMMONJS",
+    "lib": ["ES2021", "DOM"],
+    "outDir": "./dist",
+    "rootDir": ".",
+    "composite": true,
     "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": false,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "strictNullChecks": false
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "types": ["node", "@playwright/test"],
+    "declarationMap": true,
+    "sourceMap": true,
+    "removeComments": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@services/*": ["./src/main/services/*"],
+      "@pages/*": [".src/target/generated-sources/*"]
+     },
   },
   
-  // Purpose: Tell TypeScript which files to type-check and compile.
-  "include": ["tests/**/*.ts", "playwright.config.ts"]
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "scripts/**/*",
+    "config/**/*",
+    "playwright.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test-results",
+    "**/*.spec.ts"
+  ]
 }
