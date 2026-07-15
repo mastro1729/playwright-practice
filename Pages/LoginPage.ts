@@ -1,7 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 import { ElementUtil } from "../utils/ElementUtil.js";
-import { HomePage } from "../Pages/HomePage.js";
-import { RegisterPage } from "../Pages/RegisterPage.js";
+import { HomePage } from "./HomePage.js";
+import { RegisterPage } from "./RegisterPage.js";
 
 export class LoginPage {
     // Page Locators

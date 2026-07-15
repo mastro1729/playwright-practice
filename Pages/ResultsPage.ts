@@ -1,6 +1,6 @@
 import { Locator, Page } from "@playwright/test";
 import { ElementUtil } from "../utils/ElementUtil.js";
-import { ProductInfoPage } from "../Pages/ProductInfoPage.js"
+import { ProductInfoPage } from "./ProductInfoPage.js"
 
 export class ResultsPage {
     // Page Locators

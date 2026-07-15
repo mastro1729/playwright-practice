@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { ElementUtil } from "../utils/ElementUtil.js";
-import { HomePage } from "../Pages/HomePage.js";
+import { HomePage } from "./HomePage.js";
 
 export class RegisterPage {
 
